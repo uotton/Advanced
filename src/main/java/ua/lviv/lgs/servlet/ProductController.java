@@ -13,7 +13,6 @@ import ua.lviv.lgs.service.impl.ProductServiceImpl;
 
 @WebServlet("/product")
 public class ProductController extends HttpServlet {
-
 	private static final long serialVersionUID = 1L;
 	ProductService productService = ProductServiceImpl.getProductService();
 
@@ -42,7 +41,12 @@ public class ProductController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		String productId = request.getParameter("id");
+		
+		Product product = productService.read(Integer.parseInt(productId));
+		
+		request.setAttribute("product", product);
+		request.getRequestDispatcher("singleProduct.jsp").forward(request, response);
 	}
 
 	// to update resource (product)
