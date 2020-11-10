@@ -14,6 +14,7 @@ import ua.lviv.lgs.service.impl.UserServiceImpl;
 
 public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
 	private UserService userService = UserServiceImpl.getUserService();
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -26,7 +26,7 @@
         </ul>
         <ul class="navbar-nav ml-md-auto d-md-flex">
           <li class="nav-item">
-            <button class="nav-link product-logout">LogOut</button>
+            <button class="nav-link product-logout" style = "background-color: gray">LogOut</button>
           </li>
         </ul>
       </div>

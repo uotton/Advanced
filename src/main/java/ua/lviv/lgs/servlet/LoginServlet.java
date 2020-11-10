@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private UserService userService = UserServiceImpl.getUserService();
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -31,14 +31,13 @@ public class LoginServlet extends HttpServlet {
 		User user = userService.getUserByEmail(email);
 
 		if (user != null && user.getPassword().equals(password)) {
-			
 			HttpSession session = request.getSession(true);
 			session.setAttribute("userId", user.getId());
-			
+			session.setAttribute("role", user.getRole().toString());
+
 			UserLogin userLogin = new UserLogin();
 			userLogin.destinationUrl = "cabinet.jsp";
 			userLogin.userEmail = user.getEmail();
-			
 			String json = new Gson().toJson(userLogin);
 			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");

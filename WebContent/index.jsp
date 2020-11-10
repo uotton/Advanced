@@ -41,14 +41,12 @@
 				</p>
 			</form>
 			<form class="login-form">
-				<input class="email" type="text" placeholder="email address" /> <input
-					class="password" type="password" placeholder="password" />
-
+				 <input class="email" type="text" placeholder="email address" /> 
+				 <input class="password" type="password" placeholder="password" />
+				 
 				<button class="login">login</button>
-
-				<p class="message">
-					Not registered? <a href="#">Create an account</a>
-				</p>
+				
+				<p class="message"> Not registered? <a href="#">Create an account</a></p>
 
 			</form>
 
